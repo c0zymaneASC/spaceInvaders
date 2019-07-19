@@ -24,13 +24,28 @@ Extra credit:
 5. Randomize enemy speed.
 
 */
-
+var shipImage;
 function preload() {
+  shipImage = loadImage('images/spaceship.png');
 
 }
+var shipX;
 
 function setup() {
+  createCanvas(500, 500);
+  shipX = width / 2 - 25;
 }
 
 function draw() {
+  background("black");
+  //rect(shipX, height - 100, 50, 100);
+  image(shipImage, shipX, height - 100)
+}
+
+function keyPressed() {
+  if (keyCode === LEFT_ARROW) {
+    shipX -= 20;
+  } else if (keyCode === RIGHT_ARROW) {
+    shipX += 20;
+  }
 }
